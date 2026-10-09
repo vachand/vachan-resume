@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/assets/fonts/SpaceGrotesk.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/assets/fonts/DMSans.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/assets/fonts/JetBrainsMono.woff2") format("woff2");
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --font-display: "Space Grotesk";
+    --font-body: "DM Sans";
+    --font-mono: "JetBrains Mono";
+    --radius: 0.5rem;
+
+    /* Light mode — white paper, deep navy ink, restrained blue accent */
+    --background: 1 0 0;
+    --foreground: 0.245 0.045 258;
+    --card: 1 0 0;
+    --card-foreground: 0.245 0.045 258;
+    --popover: 1 0 0;
+    --popover-foreground: 0.245 0.045 258;
+
+    --primary: 0.3 0.07 258;
+    --primary-foreground: 0.985 0.004 258;
+
+    --secondary: 0.965 0.008 258;
+    --secondary-foreground: 0.32 0.05 258;
+    --muted: 0.965 0.008 258;
+    --muted-foreground: 0.52 0.028 258;
+
+    --accent: 0.55 0.16 254;
+    --accent-foreground: 0.99 0.004 254;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.985 0.004 25;
+
+    --success: 0.55 0.13 160;
+    --warning: 0.72 0.15 85;
+
+    --border: 0.915 0.008 258;
+    --input: 0.915 0.008 258;
+    --ring: 0.55 0.16 254;
+
+    --chart-1: 0.55 0.16 254;
+    --chart-2: 0.6 0.11 220;
+    --chart-3: 0.3 0.07 258;
+    --chart-4: 0.7 0.12 200;
+    --chart-5: 0.45 0.09 275;
+
+    --sidebar: 0.99 0.004 258;
+    --sidebar-foreground: 0.245 0.045 258;
+    --sidebar-primary: 0.3 0.07 258;
+    --sidebar-primary-foreground: 0.985 0.004 258;
+    --sidebar-accent: 0.965 0.008 258;
+    --sidebar-accent-foreground: 0.32 0.05 258;
+    --sidebar-border: 0.915 0.008 258;
+    --sidebar-ring: 0.55 0.16 254;
+
+    --gradient-primary: linear-gradient(
+      135deg,
+      oklch(0.3 0.07 258),
+      oklch(0.42 0.11 254)
+    );
+    --gradient-subtle: linear-gradient(
+      180deg,
+      oklch(0.985 0.006 258),
+      oklch(1 0 0)
+    );
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 0.16 0.03 258;
+    --foreground: 0.94 0.012 258;
+    --card: 0.2 0.032 258;
+    --card-foreground: 0.94 0.012 258;
+    --popover: 0.2 0.032 258;
+    --popover-foreground: 0.94 0.012 258;
+
+    --primary: 0.72 0.12 254;
+    --primary-foreground: 0.16 0.03 258;
+
+    --secondary: 0.24 0.035 258;
+    --secondary-foreground: 0.86 0.012 258;
+    --muted: 0.24 0.035 258;
+    --muted-foreground: 0.62 0.02 258;
+
+    --accent: 0.68 0.15 254;
+    --accent-foreground: 0.16 0.03 254;
+
+    --destructive: 0.62 0.2 25;
+    --destructive-foreground: 0.94 0.012 25;
+
+    --success: 0.65 0.14 160;
+    --warning: 0.75 0.15 85;
+
+    --border: 0.3 0.03 258;
+    --input: 0.3 0.03 258;
+    --ring: 0.68 0.15 254;
+
+    --chart-1: 0.68 0.15 254;
+    --chart-2: 0.7 0.12 220;
+    --chart-3: 0.78 0.09 258;
+    --chart-4: 0.72 0.13 200;
+    --chart-5: 0.66 0.1 275;
+
+    --sidebar: 0.2 0.032 258;
+    --sidebar-foreground: 0.94 0.012 258;
+    --sidebar-primary: 0.72 0.12 254;
+    --sidebar-primary-foreground: 0.16 0.03 258;
+    --sidebar-accent: 0.24 0.035 258;
+    --sidebar-accent-foreground: 0.86 0.012 258;
+    --sidebar-border: 0.3 0.03 258;
+    --sidebar-ring: 0.68 0.15 254;
+
+    --gradient-primary: linear-gradient(
+      135deg,
+      oklch(0.72 0.12 254),
+      oklch(0.58 0.15 250)
+    );
+    --gradient-subtle: linear-gradient(
+      180deg,
+      oklch(0.2 0.032 258),
+      oklch(0.16 0.03 258)
+    );
+  }
+
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  .bg-gradient-primary {
+    background-image: var(--gradient-primary);
+  }
+  .bg-gradient-subtle {
+    background-image: var(--gradient-subtle);
+  }
+  .text-gradient-primary {
+    background-image: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "overview": "A modern, responsive personal resume website for Vachan Vinayak Deshnoor, aimed at Business Analytics, Operations and Supply Chain internships.",
+  "features": [
+    "Single-page resume with Home, About, Education, Skills, Projects, Leadership and Achievements, Languages and Contact sections",
+    "Sticky navigation bar with smooth scrolling and a mobile hamburger menu",
+    "Clean professional design with white background, dark navy text and subtle blue accents",
+    "Responsive layout for laptop, tablet and mobile",
+    "SEO-friendly semantic HTML with page title and meta description"
+  ],
+  "category": "portfolio",
+  "tags": [
+    "resume",
+    "portfolio",
+    "personal-website",
+    "career"
+  ],
+  "last_updated": "2026-10-09T15:38:42.576Z"
+}
